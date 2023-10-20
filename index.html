@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+window.addEventListener("onEmbeddedMessagingReady", () => {
+    console.log("Received the onEmbeddedMessagingReady event…");
+
+    // Send data to Salesforce
+    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"source" : "External" });
+ 
+});
+
+embeddedservice_bootstrap.init(…)
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	
 <title>Page Title</title>
 </head>
 <body>
@@ -12,7 +22,7 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
-			embeddedservice_bootstrap.prechatApi.setHiddenPrechatFields({"source"  :"External"});
+			//embeddedservice_bootstrap.prechatApi.setHiddenPrechatFields({"source"  :"External"});
 			embeddedservice_bootstrap.init(
 				'00D0E000000AtSy',
 				'External_Embedded',
