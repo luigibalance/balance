@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type='text/javascript'>
+window.addEventListener("onEmbeddedMessagingReady", () => {
+    console.log("Received the onEmbeddedMessagingReady event…");
+
+    // Send data to Salesforce
+    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"source" : "External" });
+ 
+});
+</script>
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -15,11 +24,11 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
-
+			//embeddedservice_bootstrap.prechatApi.setHiddenPrechatFields({"source"  :"External"});
 			embeddedservice_bootstrap.init(
 				'00D0E000000AtSy',
-				'Deployment_Messaging',
-				'https://bancaetica--devbal.sandbox.my.site.com/ESWDeploymentMessaging1697700072590',
+				'External_Embedded',
+				'https://bancaetica--devbal.sandbox.my.site.com/ESWExternalEmbedded1697793414109',
 				{
 					scrt2URL: 'https://bancaetica--devbal.sandbox.my.salesforce-scrt.com'
 				}
@@ -29,7 +38,7 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://bancaetica--devbal.sandbox.my.site.com/ESWDeploymentMessaging1697700072590/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://bancaetica--devbal.sandbox.my.site.com/ESWExternalEmbedded1697793414109/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 
 </body>
