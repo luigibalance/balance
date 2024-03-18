@@ -31,6 +31,8 @@ window.addEventListener("onEmbeddedMessagingReady", () => {
   <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
+			        embeddedservice_bootstrap.settings.displayHelpButton = true; //Or false
+
 			embeddedservice_bootstrap.settings.defaultMinimizedText = 'Chat with Us'; //(Defaults to Chat with an Expert)
        			embeddedservice_bootstrap.settings.disabledMinimizedText = 'Chat Offline'; //(Defaults to Agent Offline)
 			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
