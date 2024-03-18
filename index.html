@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+    .embeddedServiceHelpButton .uiButton img {
+        background-image: url('path_to_your_custom_image');
+        width: 24px; /* Adjust according to your image size */
+        height: 24px; /* Adjust according to your image size */
+    }
+</style>
+
 <script type='text/javascript'>
 window.addEventListener("onEmbeddedMessagingReady", () => {
     console.log("Received the onEmbeddedMessagingReady event…");
